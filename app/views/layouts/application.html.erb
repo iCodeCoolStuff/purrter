@@ -10,8 +10,28 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <% if flash[:notice] %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <%= notice %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <%= alert %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <% end %>
+    <!--
+    <nav class="nav">
+      <a href="#"class="navbar-brand">Purrter</a>
+    </nav>-->
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
