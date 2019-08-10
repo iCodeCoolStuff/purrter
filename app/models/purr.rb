@@ -2,5 +2,5 @@ class Purr < ApplicationRecord
   belongs_to :user
   validates_associated :user
   
-  validates :content, length: {maximum: 50}
+  validates :content, length: {maximum: 140}, presence: true
 end
