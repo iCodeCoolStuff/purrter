@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @purr.content %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @purr.user %>
+</p>
+
+<%= link_to 'Edit', edit_purr_path(@purr) %> |
+<%= link_to 'Back', purrs_path %>
