@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PurrTest < ActiveSupport::TestCase
   def setup
-    @user = User.new(name: "abcd", email: "afkdjakfjkdlas@example.com", password: "foobar", password_confirmation: "foobar")
+    @user = User.new(name: "abcd", username: "efgh", email: "afkdjakfjkdlas@example.com", password: "foobar", password_confirmation: "foobar")
     @purr = @user.purrs.build(content: "This is some sample text.")
   end
 
