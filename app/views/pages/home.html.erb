@@ -1,1 +1,31 @@
-Welcome, <%= @user.name %>.
+<div class="main container">
+  <div class="row">
+    <aside style="background-color: violet;" class="col-3">
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>Explore</li>
+          <li>Notifications</li>
+          <li>Profile</li>
+          <li>Settings</li>
+        </ul>
+      <nav>
+    </aside>
+    <section style="background-color: teal;" class="col-6">
+      <article>
+        <h2>This is a Tweet</h2>
+        <p>Name: <%= @user.username%></p>
+        <p>Content: <%= @purrs.first.content%></p>
+      </article>
+    </section>
+    <aside style="background-color: chartreuse;" class="col-3">
+      <input type="text"></input>
+      <div>
+        <h4>Trends</h4>
+      </div>
+      <div>
+        <h4>Who to Follow</h4>
+      </div>
+    </aside>
+  </div>
+</div>

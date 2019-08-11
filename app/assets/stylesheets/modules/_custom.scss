@@ -1,0 +1,27 @@
+/*
+
+.container.main {
+  @include make-container(0.25rem);
+
+  $col-2-width: 16.667%;
+  $col-4-width: 33.333%;
+  $col-6-width: 50%;
+  $col-6-offset: 1%;
+  $col-4-offset: 3%;
+
+  .col-6 {
+    flex: 0 0 $col-6-width - $col-6-offset;
+    max-width: $col-6-width - $col-6-offset;
+  }
+
+  .col-4 {
+    flex: 0 0 $col-4-width - $col-4-offset;
+    max-width: $col-4-width - $col-4-offset;
+  }
+
+  .col-2 {
+    flex: 0 0 $col-2-width + $col-6-offset + $col-4-offset;
+    max-width: $col-2-width + $col-6-offset + $col-4-offset;
+  }
+
+}*/
