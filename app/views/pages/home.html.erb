@@ -1,15 +1,11 @@
 <div class="main container">
   <div class="row">
     <section class="col-3">
-      <nav>
-        <ul>
-          <li>Home</li>
-          <li>Explore</li>
-          <li>Notifications</li>
-          <li>Profile</li>
-          <li>Settings</li>
-        </ul>
-      <nav>
+      <%= user_avatar(@user) %>
+      <div>
+        <p><%= @user.name %></p>
+        <small class="text-muted"><%= "@#{@user.username}" %></small>
+      </div>
     </section>
     <section class="col-6">
       <div class="row purr">
