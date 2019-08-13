@@ -10,3 +10,45 @@
     display: inline;
   }
 }
+
+.purr {
+  border: 1px solid black;
+  border-radius: 0.5rem;
+
+  img {
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    margin-top: 0.25rem;
+  }
+
+  .purr-content {
+    word-wrap: break-word;
+    white-space: normal;
+  }
+  
+  .purr-title {
+    margin-bottom: 0.125rem;
+  
+    a {
+      color: black;
+      font-weight: 700;
+  
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .action-bar {
+    &> :not(:nth-last-child(1)) {
+      padding-right: 1rem;
+    }
+
+    div {
+      display: inline-block;
+    }
+  }
+}
+
+
+
