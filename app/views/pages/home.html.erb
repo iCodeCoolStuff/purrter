@@ -1,1 +1,46 @@
-Welcome to home!
+<div class="main container">
+  <div class="row">
+    <section class="col-3">
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>Explore</li>
+          <li>Notifications</li>
+          <li>Profile</li>
+          <li>Settings</li>
+        </ul>
+      <nav>
+    </section>
+    <section class="col-6">
+      <div class="row purr">
+        <div class="col-2">
+          <%= user_avatar(@user) %>
+        </div>
+        <div class="col-10">
+          <p class="purr-title"><a class="" href="#"><%= @user.name %> <small class="text-muted"><%= "@#{@user.username}" %></small></a></p>
+          <p class="purr-content">dkljfklajdfajkfdljakfkldjafkldjfklaklfjdlkakfjdklajfklajlkfdjkajkfjdsklfjalkjfa</p>
+          <div class="action-bar">
+            <div>
+              <i class="fas fa-reply"></i> 1,234
+            </div>
+            <div>
+              <i class="fas fa-retweet"></i> 5,678
+            </div>
+            <div>
+              <i class="fas fa-heart"></i> 10,234</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="col-3">
+      <input type="text"></input>
+      <div>
+        <h4>Trends</h4>
+      </div>
+      <div>
+        <h4>Who to Follow</h4>
+      </div>
+    </section>
+  </div>
+</div>
