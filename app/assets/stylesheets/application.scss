@@ -1,6 +1,8 @@
 @import "bootstrap";
 @import "./modules/custom.scss";
 
+$profile-border-radius: 0.5rem;
+
 .forgot {
   margin-left: auto;
 }
@@ -11,13 +13,79 @@
   }
 }
 
+.profile-title {
+  font-weight: $font-weight-bold;
+  margin-bottom: 0.125rem; 
+}
+
+.profile-img {
+  width: 100%;
+  background-color: white;
+  margin-top: -10rem;
+  border: 1px solid black;
+  border-radius: 0;
+  border-radius: $profile-border-radius; 
+}
+
+.banner {
+  width: 100%;
+  height: 50vh;
+  //background-image: url(<%= 'background-example.jpeg' %>);
+}
+
+
+ul.stats-bar {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  //line-height: 0.875;
+
+  li {
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
+    
+    a {
+      display: block;
+      box-sizing: border-box;
+      padding: 0 1.5rem;
+
+      &:hover {
+        text-decoration: none;
+        //border-bottom: 1px solid blue;
+
+        span {
+          &.text-muted {
+            color: blue !important;
+          }
+        }
+      }
+
+      span {
+        display: block;
+
+        &.text-muted {
+          text-transform: uppercase;
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+}
+
 .purr {
   border: 1px solid black;
   border-radius: 0.5rem;
+  box-sizing: border-box;
 
+  .row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  
   img {
     border: 1px solid black;
-    border-radius: 0.5rem;
+    border-radius: $profile-border-radius;
     margin-top: 0.25rem;
   }
 
@@ -29,12 +97,15 @@
   .purr-title {
     margin-bottom: 0.125rem;
   
-    a {
+    a {  
       color: black;
-      font-weight: 700;
-  
+
       &:hover {
         text-decoration: none;
+
+        strong {
+          text-decoration: underline;
+        }
       }
     }
   }

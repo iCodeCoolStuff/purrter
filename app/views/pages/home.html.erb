@@ -1,29 +1,56 @@
-<div class="main container">
+
+<div class="banner" style="background-image: url(<%= asset_path 'background-example.jpeg' %>)">
+</div>
+<section class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <ul class="stats-bar">
+          <li><a href="#"><span class="text-muted">Purrs</span><span>1,234</span></a>
+          <li><a href="#"><span class="text-muted">Following</span><span>1,234</span></a>
+          <li><a href="#"><span class="text-muted">Followers</span><span>1,234</span></a>
+          <li><a href="#"><span class="text-muted">Likes</span><span>1,234</span></a>
+        </ul>
+      </div>
+      <div class="col-3">
+        <button class="btn btn-primary ml-auto d-block">Follow</button>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="container">
   <div class="row">
     <section class="col-3">
-      <%= user_avatar(@user) %>
-      <div>
-        <p><%= @user.name %></p>
-        <small class="text-muted"><%= "@#{@user.username}" %></small>
+      <div class="row">
+        <div class="col-10">
+          <%= user_avatar @user, class: "profile-img" %>
+          <div>
+            <h5 class="profile-title"><%= @user.name %></h5>
+            <small class="text-muted"><%= "@#{@user.username}" %></small>
+          </div>
+        </div>
       </div>
     </section>
     <section class="col-6">
-      <div class="row purr">
-        <div class="col-2">
-          <%= user_avatar(@user) %>
-        </div>
-        <div class="col-10">
-          <p class="purr-title"><a class="" href="#"><%= @user.name %> <small class="text-muted"><%= "@#{@user.username}" %></small></a></p>
-          <p class="purr-content">dkljfklajdfajkfdljakfkldjafkldjfklaklfjdlkakfjdklajfklajlkfdjkajkfjdsklfjalkjfa</p>
-          <div class="action-bar">
-            <div>
-              <i class="fas fa-reply"></i> 1,234
-            </div>
-            <div>
-              <i class="fas fa-retweet"></i> 5,678
-            </div>
-            <div>
-              <i class="fas fa-heart"></i> 10,234</p>
+      <div class="purr">
+        <div class="row">
+          <div class="col-2">
+            <%= user_avatar @user, style: "width: 100%" %>
+          </div>
+          <div class="col-10">
+            <p class="purr-title"><a class="" href="#"><strong><%= @user.name %></strong> <small class="text-muted"><%= "@#{@user.username}" %></small></a></p>
+            <p class="purr-content">dkljfklajdfajkfdljakfkldjafkldjfklaklfjdlkakfjdklajfklajlkfdjkajkfjdsklfjalkjfa</p>
+            <div class="action-bar">
+              <div>
+                <i class="fas fa-reply"></i> 1,234
+              </div>
+              <div>
+                <i class="fas fa-retweet"></i> 5,678
+              </div>
+              <div>
+                <i class="fas fa-heart"></i> 10,234</p>
+              </div>
             </div>
           </div>
         </div>
