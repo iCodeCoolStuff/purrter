@@ -11,13 +11,12 @@ body {
   margin-top: 3.5rem; //If changing line height please change this value too
 }
 
-.btn-light, .btn-light:hover, .btn-light:active, .btn-light:focus {
-  color: $primary !important;
-}
-
 .nav-profile-img {
   @extend %white-bg;
-  //@extend .img-responsive;
+  vertical-align: center;
+  width: 2.625rem;
+  margin-left: 0.5rem;
+  margin-right: 0.75rem;
 }
 
 /* end */
