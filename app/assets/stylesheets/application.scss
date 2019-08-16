@@ -156,11 +156,20 @@ body {
   }
 }
 
+.purr-container > div.purr {
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  
+  &:first-child {
+    border-radius:  $profile-border-radius $profile-border-radius 0 0;
+  }
+}
+
 .purr {
   background-color: white;
-  border: 1px solid black;
-  border-radius: 0.5rem;
   box-sizing: border-box;
+  padding-top: 0.5rem;
 
   .row {
     margin-right: 0;
