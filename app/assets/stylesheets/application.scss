@@ -4,17 +4,18 @@ $primary: #ffc107;
 @import "./modules/custom.scss";
 
 $profile-border-radius: 0.5rem;
+$nav-profile-width: 2.625rem;
 
 /* Sitewide */
 
 body {
   margin-top: 3.5rem; //If changing line height please change this value too
+  background-color: #f5f8fa;
 }
 
 .nav-profile-img {
   @extend %white-bg;
-  vertical-align: center;
-  width: 2.625rem;
+  width: $nav-profile-width;
   margin-left: 0.5rem;
   margin-right: 0.75rem;
 }
@@ -39,7 +40,6 @@ body {
 
 .main {
   padding-top: 1rem;
-  background-color: #f5f8fa;
 }
 
 .profile-title {
@@ -118,6 +118,7 @@ body {
 .stats-banner {
   border-top: 1px solid #e1e8ed;
   border-bottom: 1px solid #e1e8ed;
+  background-color: white;
 
   ul.stats-bar {
     list-style: none;
@@ -136,6 +137,10 @@ body {
         padding: 0.25rem 1.5rem;
         border-bottom: 1px solid transparent;
         font-weight: 600;
+
+        &.active {
+          border-bottom: 1px solid $primary;
+        }
 
         &:hover {
           text-decoration: none;
