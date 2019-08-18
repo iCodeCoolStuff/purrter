@@ -10,6 +10,10 @@ $nav-profile-width: 2.625rem;
 
 body {
   margin-top: 3.5rem; //If changing line height please change this value too
+  @extend .gray-bg;
+}
+
+.gray-bg {
   background-color: #f5f8fa;
 }
 
@@ -18,6 +22,18 @@ body {
   width: $nav-profile-width;
   margin-left: 0.5rem;
   margin-right: 0.75rem;
+}
+
+%white-bg {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 0;
+  border-radius: $profile-border-radius; 
+}
+
+%profile {
+  @extend %white-bg;
+  width: 100%;
 }
 
 /* end */
@@ -36,10 +52,11 @@ body {
 
 /* end */
 
-/* Main Purrter Page */
+/* Profile Page */
 
 .main {
   padding-top: 1rem;
+  @extend .gray-bg;
 }
 
 .profile-title {
@@ -48,20 +65,9 @@ body {
   margin-top: 0.375rem; 
 }
 
-%white-bg {
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 0;
-  border-radius: $profile-border-radius; 
-}
-
-%profile {
-  @extend %white-bg;
-  width: 100%;
-}
-
 .who-to-follow {
   @extend %white-bg;
+  //border: 1px solid #dfdfdf;
   padding-top:    0.25rem;
   padding-bottom: 0.25rem;
 
@@ -220,4 +226,77 @@ body {
 
 /* end */
 
+/* Home Page */
 
+.card {
+  border: 1px solid black;
+}
+
+
+.home-profile {
+
+  a {  
+    color: black;
+
+    &:hover {
+      text-decoration: none;
+
+      strong {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &.card-body {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .home-profile-main {
+
+    .home-profile-img {
+      @extend %profile;
+    }
+  
+    .home-profile-title {
+      @extend .follow-profile-title;
+      margin-bottom: 0;
+    }
+  }
+
+  .col-4 {
+    padding-right: 0;
+  }
+
+  ul.home-stats {
+    list-style: none;
+    padding: 0.25rem 1.55rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    box-sizing: border-box;
+
+    li {
+      display: inline-block;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    span {
+      display: block;
+
+      &.stat-count {
+        font-weight: 600;
+        font-size: 1.125rem;
+        color: $primary;
+      }
+
+      &.text-muted {
+        text-transform: uppercase;
+        font-size: 0.75rem;
+      }
+    }
+  }
+
+}
+
+/* end */
