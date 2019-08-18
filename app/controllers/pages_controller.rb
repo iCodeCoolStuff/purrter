@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
   def home
     @user = current_user
-    @purrs = @user.purrs
+    @purrs = Purr.all.order("id DESC")
   end
 
   def index

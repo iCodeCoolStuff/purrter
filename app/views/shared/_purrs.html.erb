@@ -1,0 +1,24 @@
+<% @purrs.each do |purr| %>
+  <div class="purr">
+    <div class="row">
+      <div class="col-2">
+        <%= link_to(user_avatar(purr.user, style: "width: 100%"), user_url(purr.user)) %>
+      </div>
+      <div class="col-10">
+        <p class="purr-title"><a href="#"><strong><%= purr.user.name %></strong> <small class="text-muted"><%= "@#{purr.user.username}" %></small></a></p>
+        <p class="purr-content"><%= purr.content %></p>
+        <div class="action-bar">
+          <div>
+            <i class="fas fa-reply"></i> 1,234
+          </div>
+          <div>
+            <i class="fas fa-retweet"></i> 5,678
+          </div>
+          <div>
+            <i class="fas fa-heart"></i> 10,234</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
