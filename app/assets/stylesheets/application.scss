@@ -63,6 +63,7 @@ body {
   font-weight: $font-weight-bold;
   margin-bottom: 0.125rem;
   margin-top: 0.375rem; 
+  word-wrap: break-word;
 }
 
 .who-to-follow {
@@ -99,6 +100,7 @@ body {
   .follow-profile-title {
     font-size: 0.875rem;
     margin-bottom: 0.25rem;
+    word-wrap: break-word;
 
     small {
       display: block;
@@ -208,6 +210,7 @@ body {
   
   .purr-title {
     margin-bottom: 0.125rem;
+    word-wrap: break-word;
   
     a {  
       color: black;
