@@ -5,7 +5,9 @@ class PagesController < ApplicationController
     @purrs = Purr.all.order("id DESC")
   end
 
-  def index
+  def explore
+    @user = current_user
+    @purrs = Purr.all.order("id DESC")
   end
   
 end
