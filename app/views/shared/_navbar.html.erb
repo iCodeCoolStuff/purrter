@@ -25,12 +25,12 @@
         <button class="btn btn-light"><i class="fas fa-plus"></i> Purr</button>
       </li>
       <% else %>
-      <li class="nav-item">
-        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-light" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Log in", new_user_session_path, class: "btn btn-outline-light ml-2" %>
-      </li>
+        <li class="nav-item">
+          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-light" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Log in", new_user_session_path, class: "btn btn-outline-light ml-2" %>
+        </li>
       <% end %>
     </ul>
   </div>
