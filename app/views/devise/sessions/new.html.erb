@@ -20,11 +20,10 @@
           <%= render "devise/shared/forgot" %>
         </div>
       <% end %>
-      
-      <%= f.submit "Log in", class: "form-group btn btn-primary" %>
-
+      <div class="d-flex justify-content-between align-items-center">
+        <%= f.submit "Log in", class: "form-group btn btn-primary mb-0" %>
+        <%= link_to("Sign up", new_user_registration_path, class: "d-inline-block") %>
+      </div>
     <% end %>
-    
-    
   </div>
 </section>
