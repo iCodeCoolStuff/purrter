@@ -179,6 +179,10 @@ body {
     border-radius:  0 0 $profile-border-radius $profile-border-radius;
     border-bottom:  1px solid black;
   }
+
+  &:first-child:last-child {
+    border-radius:  $profile-border-radius;
+  }
 }
 
 .purr {
