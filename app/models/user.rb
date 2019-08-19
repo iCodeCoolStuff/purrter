@@ -8,9 +8,9 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
 
-
-  validates :username, length: {maximum: 15}, presence: true,
-            format: {with: /[a-z0-9_]{1,15}/, message: "can only contain letters, numbers and '_'"}
+  validates :name, length: {maximum: 50}, presence: true
+  validates :username, length: {maximum: 15}, presence: true, uniqueness: true,
+            format: {with: /[a-z0-9_]{1,15}/i, message: "can only contain letters, numbers and '_'"}
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
