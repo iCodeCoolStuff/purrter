@@ -1,0 +1,37 @@
+<div class="who-to-follow container">
+  <h5>Who to Follow</h5>
+  <div class="follow-profile">
+    <div class="row">
+      <div class="col-3">
+        <%= user_avatar @user, class: "follow-profile-img" %>
+      </div>
+      <div class="col-9">
+        <p class="follow-profile-title">
+          <a href="#">
+            <strong><%= @user.name %></strong>
+            <small class="text-muted">
+              <%= "@#{@user.username}" %>
+            </small>
+          </a>
+        </p>
+        <%= render 'shared/small_follow_button.html.erb' %>
+      </div>
+    </div>
+  </div>
+  <div class="follow-profile">
+    <div class="row">
+      <div class="col-3"><%= user_avatar @user, class: "follow-profile-img" %></div>
+      <div class="col-9">
+        <p class="follow-profile-title">
+          <a href="#">
+            <strong><%= @user.name %></strong>
+            <small class="text-muted">
+              <%= "@#{@user.username}" %>
+            </small>
+          </a>
+        </p>
+        <%= render 'shared/small_follow_button.html.erb' %>
+      </div>
+    </div>
+  </div>
+</div>
