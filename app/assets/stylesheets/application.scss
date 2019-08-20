@@ -168,7 +168,11 @@ body {
   }
 }
 
-.purr-container > div.purr {
+.purr-container {
+  margin-bottom: 1rem;
+}
+
+.purr-container > .purr {
   border-top: 1px solid black;
   border-right: 1px solid black;
   border-left: 1px solid black;
@@ -201,6 +205,7 @@ body {
     border: 1px solid black;
     border-radius: $profile-border-radius;
     margin-top: 0.25rem;
+    width: 100%;
   }
 
   .purr-content {
@@ -308,7 +313,28 @@ body {
       }
     }
   }
+}
 
+.post-form {
+  @extend %white-bg;
+  border-bottom: none;
+  border-radius: $profile-border-radius $profile-border-radius 0 0;
+  box-sizing: border-box;
+  padding: 0.5rem 1rem;
+
+  .form-content {
+    @extend .d-flex;
+
+    img {
+      @extend %profile;
+      width: calc(1.5em + 0.75rem + 2px);
+    }
+  
+    input[type="text"] {
+      margin-left: 1rem;
+    }
+  }
+  
 }
 
 /* end */

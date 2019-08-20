@@ -25,15 +25,10 @@ class PurrsController < ApplicationController
   # POST /purrs.json
   def create
     @purr = Purr.new(purr_params)
-
-    respond_to do |format|
-      if @purr.save
-        format.html { redirect_to @purr, notice: 'Purr was successfully created.' }
-        format.json { render :show, status: :created, location: @purr }
-      else
-        format.html { render :new }
-        format.json { render json: @purr.errors, status: :unprocessable_entity }
-      end
+    if @purr.save
+      redirect_to home_url, notice: "Your Purr has been sent."
+    else
+      redirect_to home_url, alert: "Invalid form."
     end
   end
 
