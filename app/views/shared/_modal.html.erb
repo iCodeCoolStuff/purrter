@@ -1,0 +1,25 @@
+<div class="modal fade" id="purrModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add New Purr</h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="purr-form">
+          <%= form_for @new_purr do |f| %>
+            <div class="form-content">
+            <%= link_to(user_avatar(current_user), user_url(current_user)) %>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+            <%= f.text_field :content, autofocus: true, autocomplete: "content", class: "form-control",
+                                placeholder: "What's Cattening?", required: "" %>
+            </div>
+            <%= f.submit "Purr", class: "form-group btn btn-primary d-block ml-auto my-1" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

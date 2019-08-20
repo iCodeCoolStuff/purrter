@@ -315,13 +315,7 @@ body {
   }
 }
 
-.post-form {
-  @extend %white-bg;
-  border-bottom: none;
-  border-radius: $profile-border-radius $profile-border-radius 0 0;
-  box-sizing: border-box;
-  padding: 0.5rem 1rem;
-
+.purr-form {
   .form-content {
     @extend .d-flex;
 
@@ -334,7 +328,15 @@ body {
       margin-left: 1rem;
     }
   }
-  
+}
+
+.post-form {
+  @extend %white-bg;
+  @extend .purr-form;
+  border-bottom: none;
+  border-radius: $profile-border-radius $profile-border-radius 0 0;
+  box-sizing: border-box;
+  padding: 0.5rem 1rem;  
 }
 
 /* end */

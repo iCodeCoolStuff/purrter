@@ -30,5 +30,8 @@
     <% end %>
     <%= render 'shared/navbar' %>
     <%= yield %>
+    <% if current_user %>
+      <%= render 'shared/modal' %>
+    <% end %>
   </body>
 </html>
