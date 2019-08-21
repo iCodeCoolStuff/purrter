@@ -50,6 +50,20 @@ body {
   }
 }
 
+#error_explanation {
+  border: 1px solid $danger;
+  border-radius: 0.5rem;
+  color: $danger;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  
+  h2 {
+    font-size: 1.375rem;
+    text-align: center;
+    margin-top: 0.25rem;
+  }
+}
+
 /* end */
 
 /* Profile Page */
