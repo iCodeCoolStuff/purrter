@@ -1,5 +1,5 @@
 <% if current_user.id == @user.id %>
-  <a href='<%= edit_user_path @user %>' class="btn btn-outline-primary ml-auto d-block">Edit Profile</a>
+  <a href='<%= edit_user_registration_path @user %>' class="btn btn-outline-primary ml-auto d-block">Edit Profile</a>
 <% else %>
   <% if !current_user.following?(@user) %>
     <%= form_for(current_user.active_relationships.build) do |f| %>
