@@ -8,6 +8,8 @@ gem 'rails', '~> 5.2.3'
 # bootstrap
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
