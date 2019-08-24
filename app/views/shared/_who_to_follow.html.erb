@@ -5,7 +5,7 @@
     <div class="follow-profile">
       <div class="row">
         <div class="col-3">
-          <%= user_avatar u, class: "follow-profile-img" %>
+          <%= link_to(user_avatar(current_user, class: "follow-profile-img"), user_url(u)) %>
         </div>
         <div class="col-9">
           <p class="follow-profile-title">

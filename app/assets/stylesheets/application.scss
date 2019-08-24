@@ -11,7 +11,7 @@ $hero-darkness: 0.3;
 /* Sitewide */
 
 body {
-  //margin-top: $nav-height; //If changing line height please change this value too
+  margin-top: $nav-height; //If changing line height please change this value too
   @extend .gray-bg;
 }
 
@@ -385,6 +385,7 @@ body {
   background-size: cover;
   width: 100%;
   height: 100vh;
+  margin-top: -$nav-height;
 
   .card {
     box-sizing: border-box;
