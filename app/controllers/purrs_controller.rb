@@ -1,4 +1,5 @@
 class PurrsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_purr, only: [:show, :edit, :update, :destroy]
 
   # GET /purrs

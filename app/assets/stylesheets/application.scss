@@ -5,11 +5,13 @@ $primary: #ffc107;
 
 $profile-border-radius: 0.5rem;
 $nav-profile-width: 2.625rem;
+$nav-height: 3.5rem;
+$hero-darkness: 0.3;
 
 /* Sitewide */
 
 body {
-  margin-top: 3.5rem; //If changing line height please change this value too
+  margin-top: $nav-height; //If changing line height please change this value too
   @extend .gray-bg;
 }
 
@@ -263,7 +265,8 @@ body {
 
 /* Home Page */
 
-.card {
+.home-card {
+  @extend .card;
   border: 1px solid black;
 }
 
@@ -365,4 +368,23 @@ body {
   @extend %white-bg;
   padding-top:    0.25rem;
 }
+/* end */
+
+/* Landing Page */
+
+.landing-hero {
+  background: linear-gradient( rgba(0, 0, 0, $hero-darkness), rgba(0, 0, 0, $hero-darkness)),
+  image-url('landing-page-bg.jpg');
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  margin-top: -$nav-height;
+
+  .card {
+    box-sizing: border-box;
+    padding: 1rem 2rem;
+  }
+}
+
 /* end */
