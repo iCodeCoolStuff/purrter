@@ -1,4 +1,4 @@
-<h2>Forgot your password?</h2>
+<!--<h2>Forgot your password?</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -13,4 +13,22 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%= render "devise/shared/links" %>-->
+
+<section class="container vh-100 d-flex flex-column justify-content-center">
+  <div class="col-sm-8 col-md-6 col-lg-4 d-flex flex-column mx-auto">
+    <h1 class="text-center h2 mb-4">Forgot your password?</h1>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+    
+      <div class="form-group">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Enter Email..." %>
+      </div>
+    
+      <%= f.submit "Send me reset password instructions", class: "btn btn-block btn-primary" %>
+    <% end %>
+    <div class="d-flex mt-3 double-sign-in-links">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</section>
