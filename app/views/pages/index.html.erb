@@ -6,10 +6,31 @@
         <p class="h4 font-weight-light">Find out what's cattening, right now, with friends and other
           cool cats that you care about.</p>
       </div>
-      <div class="col-6">
-        <div class="card">
-          <h5 class="card-title">Log in</h5>
-          <p class="card-body"></p>
+      <div class="col-6 d-flex justify-content-center">
+        <div class="col-9">
+          <div class="card landing-login-form">
+            <h3 class="card-title">Log in</h3>
+            <%= form_for :user, url: user_session_path, method: "post" do |f| %>
+              <div class="form-group">
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email" %>
+              </div>
+
+              <div class="form-group d-flex">
+                <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Password" %>
+                <%= f.submit "Log in", class: "form-group btn btn-outline-primary ml-1 mb-0" %>
+              </div>
+
+              <div class="form-group form-check d-flex">
+                <%= f.check_box :remember_me, class: "form-check-input" %>
+                <%= f.label :remember_me, class: "form-check-label" %>
+                <%= render "devise/shared/forgot" %>
+              </div>
+            <% end %>
+          </div>
+          <div class="card mt-3">
+            <h3 class="card-title">New to Purrter?</h3>
+            <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-block btn-primary" %>
+          </div>
         </div>
       </div>
     </div>

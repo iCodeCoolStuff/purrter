@@ -6,6 +6,7 @@ $primary: #ffc107;
 $profile-border-radius: 0.5rem;
 $nav-profile-width: 2.625rem;
 $nav-height: 3.5rem;
+$hero-darkness: 0.3;
 
 /* Sitewide */
 
@@ -372,12 +373,18 @@ body {
 /* Landing Page */
 
 .landing-hero {
-  background: image-url("landing-page-bg.jpg");
+  background: linear-gradient( rgba(0, 0, 0, $hero-darkness), rgba(0, 0, 0, $hero-darkness)),
+  image-url('landing-page-bg.jpg');
   background-position: center;
   background-size: cover;
   width: 100%;
   height: 100vh;
   margin-top: -$nav-height;
+
+  .card {
+    box-sizing: border-box;
+    padding: 1rem 2rem;
+  }
 }
 
 /* end */
