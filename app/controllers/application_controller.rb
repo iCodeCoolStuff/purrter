@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   before_action :new_purr
 
   def new_purr
-    @new_purr = Purr.new
+    if user_signed_in?
+      @new_purr = Purr.new
+    end
   end
 end
