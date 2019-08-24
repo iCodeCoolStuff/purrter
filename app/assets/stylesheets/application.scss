@@ -11,7 +11,7 @@ $hero-darkness: 0.3;
 /* Sitewide */
 
 body {
-  margin-top: $nav-height; //If changing line height please change this value too
+  //margin-top: $nav-height; //If changing line height please change this value too
   @extend .gray-bg;
 }
 
@@ -67,6 +67,12 @@ body {
     font-size: 1.375rem;
     text-align: center;
     margin-top: 0.25rem;
+  }
+}
+
+.double-sign-in-links {
+  :nth-child(2) {
+    margin-left: 1rem;
   }
 }
 
@@ -379,7 +385,6 @@ body {
   background-size: cover;
   width: 100%;
   height: 100vh;
-  margin-top: -$nav-height;
 
   .card {
     box-sizing: border-box;
