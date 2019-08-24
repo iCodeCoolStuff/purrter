@@ -28,4 +28,14 @@ class User < ApplicationRecord
   def following?(other)
     following.include?(other)
   end
+
+  def self.random_2_not(user)
+    records = User.where.not(id: user.id)
+
+    unless user.following.empty?
+      records = records.where("id not in (?)", user.following.pluck(:id))         
+    end
+
+    records.order(Arel.sql('random()')).limit(2) 
+  end
 end
