@@ -5,7 +5,7 @@
         <%= link_to(user_avatar(purr.user), user_url(purr.user)) %>
       </div>
       <div class="col-10">
-        <p class="purr-title"><a href="#"><strong><%= purr.user.name %></strong> <small class="text-muted"><%= "@#{purr.user.username}" %></small></a></p>
+        <p class="purr-title"><a href="<%= user_url(purr.user) %>"><strong><%= purr.user.name %></strong> <small class="text-muted"><%= "@#{purr.user.username}" %></small></a></p>
         <p class="purr-content"><%= purr.content %></p>
         <div class="action-bar">
           <div>
