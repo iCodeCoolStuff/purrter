@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @user = current_user
-    @purrs = Purr.all.order("id DESC")
+    @purrs = Purr.where("user_id IN (?) OR user_id = ?",  @user.following_ids, @user.id)
   end
 
   def explore
