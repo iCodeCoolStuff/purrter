@@ -393,4 +393,18 @@ body {
   }
 }
 
+@media (min-width: map-get($map: $grid-breakpoints, $key: 'md')) 
+  and (max-width: map-get($map: $grid-breakpoints, $key: 'lg')) {
+  
+  .landing-form-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: map-get($map: $grid-breakpoints, $key: 'md')) {
+  .landing-text-container {
+    text-align: center;
+  }
+}
+
 /* end */

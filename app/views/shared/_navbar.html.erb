@@ -1,37 +1,42 @@
-<nav class="navbar navbar-light navbar-expand-sm bg-primary fixed-top">
+<nav class="navbar navbar-light navbar-expand-md bg-primary fixed-top">
   <div class="container">
     <a href='<%= user_signed_in? ? home_path : root_path %>' class="navbar-brand">Purrter</a>
-    <ul class="navbar-nav">
-      <% if current_user %>
-      <li class="nav-item">
-        <a class="nav-link" href="/home">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/explore">Explore</a>
-      </li>
-      <li class="nav-item">
-        <div class="dropdown">
-          <%= link_to(user_avatar(current_user, class: "nav-profile-img"), '#', 
-            "data-toggle" => "dropdown") %>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href='<%= user_url(current_user) %>'>Profile</a>
-            <a class="dropdown-item" href="<%= edit_user_registration_path @user %>">Settings</a>
-            <div class="dropdown-divider"></div>
-            <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ml-auto">
+        <% if current_user %>
+        <li class="nav-item">
+          <a class="nav-link" href="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/explore">Explore</a>
+        </li>
+        <li class="nav-item">
+          <div class="dropdown">
+            <%= link_to(user_avatar(current_user, class: "nav-profile-img"), '#', 
+              "data-toggle" => "dropdown") %>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href='<%= user_url(current_user) %>'>Profile</a>
+              <a class="dropdown-item" href="<%= edit_user_registration_path @user %>">Settings</a>
+              <div class="dropdown-divider"></div>
+              <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
+            </div>
           </div>
-        </div>
-      </li>
-      <li class="nav-item">
-        <button class="btn btn-light" data-toggle="modal" data-target="#purrModal"><i class="fas fa-plus"></i> Purr</button>
-      </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-light" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Log in", new_user_session_path, class: "btn btn-outline-light ml-2" %>
+          <button class="btn btn-light" data-toggle="modal" data-target="#purrModal"><i class="fas fa-plus"></i> Purr</button>
         </li>
-      <% end %>
-    </ul>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Sign up", new_user_registration_path, class: "btn btn-light" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Log in", new_user_session_path, class: "btn btn-outline-light ml-2" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </nav>
