@@ -26,6 +26,12 @@ body {
   margin-right: 0.75rem;
 }
 
+@media (max-width: map-get($map: $grid-breakpoints, $key: 'md')) {
+  .navbar-nav {
+    text-align: center;
+  }
+}
+
 %white-bg {
   background-color: white;
   border: 1px solid black;
