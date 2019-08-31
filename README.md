@@ -20,7 +20,7 @@ This is a twitter-like app mainly for cats, but if you're not a cat, you can use
 
 ### Installing
 1. `git clone` this repository
-2. Run 'bundle install'
+2. Run `bundle install`
 3. Log into your psql shell and run `CREATE DATABASE purrter_development;`
 3. Run `rails db:migrate`
 4. Run `rails s`
