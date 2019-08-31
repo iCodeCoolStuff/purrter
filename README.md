@@ -1,24 +1,9 @@
-# README
+This is a twitter-like app mainly for cats, but if you're not a cat, you can use it too if you really want.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Features:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- User authentication
+- Creating Posts
+- Updating User Profile
+- Following and Unfollowing Users
+- Responsive to mobile and tablet view
