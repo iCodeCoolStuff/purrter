@@ -400,7 +400,7 @@ body {
   padding: 0.5rem 1rem;  
 }
 
-@media (max-width: map-get($map: $grid-breakpoints, $key: "md")) {
+@media (max-width: map-get($map: $grid-breakpoints, $key: "md") - 1px) {
   .bottom-purr {
     border-bottom-right-radius: $profile-border-radius !important;
     border-bottom-left-radius: $profile-border-radius !important;
