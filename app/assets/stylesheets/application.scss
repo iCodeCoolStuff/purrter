@@ -161,6 +161,12 @@ body {
   background-size: cover;
 }
 
+@media (max-width: map-get($map: $grid-breakpoints, $key: 'lg')) {
+  .banner {
+    height: 25vh;
+  }
+}
+
 
 .stats-banner {
   border-top: 1px solid #e1e8ed;
@@ -205,7 +211,33 @@ body {
       }
     }
   }
+
+  .profile-mobile-head {
+    .profile-mobile-img {
+      @extend %profile;
+      margin-top: -1.375rem;
+      width: 4rem;
+      height: 4rem;
+    }
+  }
 }
+
+@media (max-width: map-get($map: $grid-breakpoints, $key: 'sm')) {
+  .stats-banner {
+    ul.stats-bar {
+      li {
+        a {
+          padding: 0.25rem 0.5rem;
+
+          span.text-muted {
+            font-size: 0.625rem;
+          }
+        }
+      }
+    }
+  }
+}
+
 .purr-content-container {
   margin-left: 1rem;
 }

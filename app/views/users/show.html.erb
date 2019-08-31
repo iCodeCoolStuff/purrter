@@ -3,17 +3,32 @@
 </div>
 <section class="container-fluid stats-banner">
   <div class="container">
+    <div class="row d-md-none">
+      <div class="col-12">
+        <div class="profile-mobile-head d-flex mt-1">
+          <%= user_avatar @user, class: "profile-mobile-img" %>
+          <div class="d-flex flex-column justify-content-center ml-auto">
+            <%= render 'shared/profile_button' %>
+          </div>
+        </div>
+        <div class="mt-1">
+          <h6 class="profile-title mb-0"><%= @user.name %></h6>
+          <small class="text-muted"><%= "@#{@user.username}" %></small>
+          <p><i class="fas fa-calendar-alt"></i> Joined <%= @user.created_at.strftime("%B %Y") %>
+        </div>
+      </div>
+    </div>
     <div class="row">
-      <div class="col-3"></div>
-      <div class="col-6">
-        <ul class="stats-bar">
+      <div class="d-none d-md-block col-md-4 col-lg-3"></div>
+      <div class="col-12 col-md-8 col-lg-6">
+        <ul class="stats-bar d-flex d-md-block justify-content-between">
           <li><a href="#" class="active"><span class="text-muted">Purrs</span><span><%= @user.purrs.count %></span></a>
           <li><a href="#"><span class="text-muted">Following</span><span><%= @user.following.count %></span></span></a>
           <li><a href="#"><span class="text-muted">Followers</span><span><%= @user.followers.count %></span></a>
           <li><a href="#"><span class="text-muted">Likes</span><span>0</span></a>
         </ul>
       </div>
-      <div class="col-3 d-flex flex-column justify-content-center">
+      <div class="d-none d-lg-flex col-3 flex-column justify-content-center">
         <%= render 'shared/profile_button' %>
       </div>
     </div>
@@ -22,7 +37,7 @@
 <section class="container-fluid main">
   <div class="container">
     <div class="row">
-      <section class="col-3">
+      <section class="d-none d-md-block col-md-4 col-lg-3">
         <div class="row">
           <div class="col-10">
             <%= user_avatar @user, class: "profile-img" %>
@@ -33,11 +48,17 @@
             </div>
           </div>
         </div>
+        <div class="d-none d-md-block d-lg-none">
+          <%= render 'shared/profile_button' %>
+        </div>
+        <div class="d-none d-md-block d-lg-none mt-md-3 mt-lg-0">
+          <%= render 'shared/who_to_follow.html.erb' %>
+        </div>
       </section>
-      <section class="col-6 purr-container">
+      <section class="col-md-8 col-lg-6 purr-container">
         <%= render 'shared/purrs.html.erb' %>
       </section>
-      <section class="col-3">
+      <section class="d-none d-lg-block col-lg-3">
         <%= render 'shared/who_to_follow.html.erb' %>
       </section>
     </div>
