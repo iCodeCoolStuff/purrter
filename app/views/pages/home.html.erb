@@ -1,7 +1,7 @@
 <section class="container-fluid main">
-  <div class="container">
+  <div class="container no-padding-x-sm">
     <div class="row">
-      <div class="col-3">
+      <div class="d-none d-md-block col-md-4 col-lg-3">
         <div class="home-card">
           <img class="card-img-top" src="<%= asset_path 'background-example.jpeg' %>">
           <div class="card-body home-profile container">
@@ -30,22 +30,14 @@
             </div>
           </div>
         </div>
-      </div>
-      <section class="col-6 purr-container">
-        <div class="post-form">
-          <%= form_for @new_purr do |f| %>
-            <div class="form-content">
-              <%= link_to(user_avatar(current_user), user_url(current_user)) %>
-              <%= f.hidden_field :user_id, value: current_user.id %>
-              <%= f.text_field :content, autofocus: true, autocomplete: "content", class: "form-control",
-                                placeholder: "What's Cattening?", required: "" %>
-            </div>
-            <%= f.submit "Purr", class: "form-group btn btn-primary d-block ml-auto my-1" %>
-          <% end %>
+        <div class="d-none d-md-block d-lg-none mt-3">
+          <%= render 'shared/who_to_follow.html.erb' %>
         </div>
-        <%= render 'shared/purrs.html.erb' %>
+      </div>
+      <section class="col-12 col-md-8 col-lg-6">
+        <%= render 'shared/home_content.html.erb' %>
       </section>
-      <div class="col-3">
+      <div class="d-none d-lg-block col-3">
         <%= render 'shared/who_to_follow.html.erb' %>
       </div>
     </div>

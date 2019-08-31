@@ -1,0 +1,20 @@
+<div class="purr d-flex<%= ' bottom-purr' if bottom %><%= ' top-purr' if top %>">
+  <div class="purr-img-container">
+    <%= link_to(user_avatar(purr.user), user_url(purr.user)) %>
+  </div>
+  <div class="purr-content-container">
+    <p class="purr-title"><a href="<%= user_url(purr.user) %>"><strong><%= purr.user.name %></strong> <small class="text-muted"><%= "@#{purr.user.username}" %></small></a></p>
+    <p class="purr-content"><%= purr.content %></p>
+    <div class="action-bar">
+      <div>
+        <i class="fas fa-reply" data-toggle="tooltip" data-placement="top" title="Coming Soon!"></i>
+      </div>
+      <div>
+        <i class="fas fa-retweet" data-toggle="tooltip" data-placement="top" title="Coming Soon!"></i>
+      </div>
+      <div>
+        <i class="fas fa-heart" data-toggle="tooltip" data-placement="top" title="Coming Soon!"></i></p>
+      </div>
+    </div>
+  </div>
+</div>

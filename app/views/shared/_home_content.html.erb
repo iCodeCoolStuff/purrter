@@ -1,0 +1,14 @@
+<div class="purr-container">
+  <div class="post-form">
+    <%= form_for @new_purr do |f| %>
+      <div class="form-content">
+        <%= link_to(user_avatar(current_user), user_url(current_user)) %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.text_field :content, autofocus: true, autocomplete: "content", class: "form-control",
+                          placeholder: "What's Cattening?", required: "", maxlength: "140" %>
+      </div>
+      <%= f.submit "Purr", class: "form-group btn btn-primary d-block ml-auto my-1" %>
+    <% end %>
+  </div>
+  <%= render "shared/purrs.html.erb" %>
+</div>

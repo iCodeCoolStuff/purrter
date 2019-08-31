@@ -26,6 +26,12 @@ body {
   margin-right: 0.75rem;
 }
 
+@media (max-width: map-get($map: $grid-breakpoints, $key: 'md')) {
+  .navbar-nav {
+    text-align: center;
+  }
+}
+
 %white-bg {
   background-color: white;
   border: 1px solid black;
@@ -40,6 +46,13 @@ body {
 
 .alert {
   margin-bottom: 0;
+}
+
+@media (max-width: map-get($map: $grid-breakpoints, $key: 'md')) {
+  .no-padding-x-sm {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 /* end */
@@ -148,6 +161,12 @@ body {
   background-size: cover;
 }
 
+@media (max-width: map-get($map: $grid-breakpoints, $key: 'lg')) {
+  .banner {
+    height: 25vh;
+  }
+}
+
 
 .stats-banner {
   border-top: 1px solid #e1e8ed;
@@ -192,27 +211,52 @@ body {
       }
     }
   }
+
+  .profile-mobile-head {
+    .profile-mobile-img {
+      @extend %profile;
+      margin-top: -1.375rem;
+      width: 4rem;
+      height: 4rem;
+    }
+  }
 }
 
-.purr-container {
-  margin-bottom: 1rem;
+@media (max-width: map-get($map: $grid-breakpoints, $key: 'sm')) {
+  .stats-banner {
+    ul.stats-bar {
+      li {
+        a {
+          padding: 0.25rem 0.5rem;
+
+          span.text-muted {
+            font-size: 0.625rem;
+          }
+        }
+      }
+    }
+  }
 }
 
-.purr-container > .purr {
+.purr-content-container {
+  margin-left: 1rem;
+}
+
+.purr-container > div {
   border-top: 1px solid black;
   border-right: 1px solid black;
   border-left: 1px solid black;
   
-  &:first-child {
+  &:first-of-type {
     border-radius:  $profile-border-radius $profile-border-radius 0 0;
   }
 
-  &:last-child {
+  &:last-of-type {
     border-radius:  0 0 $profile-border-radius $profile-border-radius;
     border-bottom:  1px solid black;
   }
 
-  &:first-child:last-child {
+  &:first-of-type:last-of-type {
     border-radius:  $profile-border-radius;
   }
 }
@@ -221,6 +265,8 @@ body {
   background-color: white;
   box-sizing: border-box;
   padding-top: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 
   .row {
     margin-right: 0;
@@ -234,14 +280,33 @@ body {
     width: 100%;
   }
 
+  .purr-img-container {
+    img {
+      width: 3.25rem;
+      height: 3.25rem;
+    }
+  }
+
+  @media (max-width: map-get($map: $grid-breakpoints, $key: 'sm')) {
+    .purr-img-container img {
+      width: calc(1.5em + 0.75rem + 2px);
+      height: calc(1.5em + 0.75rem + 2px);
+    }
+  }
+
   .purr-content {
+    overflow-wrap: break-word;
     word-wrap: break-word;
+    word-break: break-word;
     white-space: normal;
   }
   
   .purr-title {
     margin-bottom: 0.125rem;
+    overflow-wrap: break-word;
     word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
   
     a {  
       color: black;
@@ -353,6 +418,7 @@ body {
   
     input[type="text"] {
       margin-left: 1rem;
+      min-width: 0;
     }
   }
 }
@@ -364,6 +430,19 @@ body {
   border-radius: $profile-border-radius $profile-border-radius 0 0;
   box-sizing: border-box;
   padding: 0.5rem 1rem;  
+}
+
+@media (max-width: map-get($map: $grid-breakpoints, $key: "md") - 1px) {
+  .bottom-purr {
+    border-bottom-right-radius: $profile-border-radius !important;
+    border-bottom-left-radius: $profile-border-radius !important;
+    border-bottom: 1px solid black;
+  }
+
+  .top-purr {
+    border-top-left-radius: $profile-border-radius !important;
+    border-top-right-radius: $profile-border-radius !important;
+  }
 }
 
 /* end */
@@ -390,6 +469,20 @@ body {
   .card {
     box-sizing: border-box;
     padding: 1rem 2rem;
+  }
+}
+
+@media (min-width: map-get($map: $grid-breakpoints, $key: 'md')) 
+  and (max-width: map-get($map: $grid-breakpoints, $key: 'lg')) {
+  
+  .landing-form-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: map-get($map: $grid-breakpoints, $key: 'md')) {
+  .landing-text-container {
+    text-align: center;
   }
 }
 
