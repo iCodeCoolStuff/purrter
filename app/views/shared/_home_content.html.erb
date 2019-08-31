@@ -1,0 +1,26 @@
+<div class="purr-container">
+  <div class="post-form">
+    <%= form_for @new_purr do |f| %>
+      <div class="form-content">
+        <%= link_to(user_avatar(current_user), user_url(current_user)) %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.text_field :content, autofocus: true, autocomplete: "content", class: "form-control",
+                          placeholder: "What's Cattening?", required: "", maxlength: "140" %>
+      </div>
+      <%= f.submit "Purr", class: "form-group btn btn-primary d-block ml-auto my-1" %>
+    <% end %>
+  </div>
+  <% @purrs[0, 3].each do |purr| %>
+    <%= render 'shared/purr.html.erb', purr: purr, bottom: purr.equal?(@purrs[0, 3].last) ? true : false, top: false %>
+  <% end %>
+  <section class="d-block d-md-none my-3 my-md-0">
+    <%= render 'shared/who_to_follow.html.erb' %>
+  </section>
+  <% other_purrs = @purrs[3, @purrs.count] %>
+  <% if other_purrs %>
+    <% @purrs[3, @purrs.count].each do |purr| %>
+      <%= render 'shared/purr.html.erb', purr: purr, top: purr.equal?(other_purrs.first) ? true : false, 
+                                                     bottom: purr.equal?(other_purrs.last) ? true : false %>
+    <% end %>
+  <% end %>
+</div>

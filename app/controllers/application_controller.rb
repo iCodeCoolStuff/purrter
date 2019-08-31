@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
       @new_purr = Purr.new
     end
   end
+
+  def set_to_follow_users
+    @to_follow_users = User.random_2_not(current_user)
+  end
 end

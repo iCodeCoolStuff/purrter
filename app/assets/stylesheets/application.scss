@@ -48,6 +48,13 @@ body {
   margin-bottom: 0;
 }
 
+@media (max-width: map-get($map: $grid-breakpoints, $key: 'md')) {
+  .no-padding-x-sm {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 /* end */
 
 /* Forms */
@@ -199,9 +206,8 @@ body {
     }
   }
 }
-
-.purr-container {
-  margin-bottom: 1rem;
+.purr-content-container {
+  margin-left: 1rem;
 }
 
 .purr-container > div {
@@ -209,16 +215,16 @@ body {
   border-right: 1px solid black;
   border-left: 1px solid black;
   
-  &:first-child {
+  &:first-of-type {
     border-radius:  $profile-border-radius $profile-border-radius 0 0;
   }
 
-  &:last-child {
+  &:last-of-type {
     border-radius:  0 0 $profile-border-radius $profile-border-radius;
     border-bottom:  1px solid black;
   }
 
-  &:first-child:last-child {
+  &:first-of-type:last-of-type {
     border-radius:  $profile-border-radius;
   }
 }
@@ -227,6 +233,8 @@ body {
   background-color: white;
   box-sizing: border-box;
   padding-top: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 
   .row {
     margin-right: 0;
@@ -240,14 +248,33 @@ body {
     width: 100%;
   }
 
+  .purr-img-container {
+    img {
+      width: 3.25rem;
+      height: 3.25rem;
+    }
+  }
+
+  @media (max-width: map-get($map: $grid-breakpoints, $key: 'sm')) {
+    .purr-img-container img {
+      width: calc(1.5em + 0.75rem + 2px);
+      height: calc(1.5em + 0.75rem + 2px);
+    }
+  }
+
   .purr-content {
+    overflow-wrap: break-word;
     word-wrap: break-word;
+    word-break: break-word;
     white-space: normal;
   }
   
   .purr-title {
     margin-bottom: 0.125rem;
+    overflow-wrap: break-word;
     word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
   
     a {  
       color: black;
@@ -359,6 +386,7 @@ body {
   
     input[type="text"] {
       margin-left: 1rem;
+      min-width: 0;
     }
   }
 }
@@ -370,6 +398,19 @@ body {
   border-radius: $profile-border-radius $profile-border-radius 0 0;
   box-sizing: border-box;
   padding: 0.5rem 1rem;  
+}
+
+@media (max-width: map-get($map: $grid-breakpoints, $key: "md")) {
+  .bottom-purr {
+    border-bottom-right-radius: $profile-border-radius !important;
+    border-bottom-left-radius: $profile-border-radius !important;
+    border-bottom: 1px solid black;
+  }
+
+  .top-purr {
+    border-top-left-radius: $profile-border-radius !important;
+    border-top-right-radius: $profile-border-radius !important;
+  }
 }
 
 /* end */
