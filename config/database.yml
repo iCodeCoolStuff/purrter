@@ -10,7 +10,6 @@ test:
   <<: *default
   database: purrter_test
   
-
 development:
   <<: *default
   database: purrter_development
