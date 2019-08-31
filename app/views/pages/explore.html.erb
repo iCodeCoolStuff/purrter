@@ -1,7 +1,7 @@
 <section class="container-fluid main">
   <div class="container">
     <div class="row">
-      <div class="col-3">
+      <div class="col-12 col-md-4 col-lg-3">
         <div class="explore">
           <div class="container">
             <h5>Explore</h5>
@@ -9,11 +9,14 @@
                 your posts will also appear here so other people can see your opinions and follow if they choose.</p>
           </div>
         </div>
+        <div class="d-none d-md-block d-lg-none mt-3">
+          <%= render 'shared/who_to_follow.html.erb' %>
+        </div>
       </div>
-      <section class="col-6 purr-container">
+      <section class="col-12 col-md-8 col-lg-6 purr-container mt-3 mt-md-0">
         <%= render 'shared/purrs.html.erb' %>
       </section>
-      <div class="col-3">
+      <div class="d-none d-lg-block col-3">
         <%= render 'shared/who_to_follow.html.erb' %>
       </div>
     </div>
