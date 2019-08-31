@@ -7,27 +7,28 @@
     <div class="collapse navbar-collapse" id="navbarContent">
       <ul class="navbar-nav ml-auto">
         <% if current_user %>
-        <li class="nav-item">
-          <a class="nav-link" href="/home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/explore">Explore</a>
-        </li>
-        <li class="nav-item">
-          <div class="dropdown">
-            <%= link_to(user_avatar(current_user, class: "nav-profile-img"), '#', 
-              "data-toggle" => "dropdown") %>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href='<%= user_url(current_user) %>'>Profile</a>
-              <a class="dropdown-item" href="<%= edit_user_registration_path @user %>">Settings</a>
-              <div class="dropdown-divider"></div>
-              <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
+          <li class="nav-item">
+            <a class="nav-link" href="/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/explore">Explore</a>
+          </li>
+          <li class="nav-item">
+            <div class="dropdown">
+              <%= link_to(user_avatar(current_user, class: "nav-profile-img"), '#', 
+                "data-toggle" => "dropdown", class: "d-none d-md-inline") %>
+              <%= link_to "Profile", '#', "data-toggle" => "dropdown", class: "nav-link d-inline-block d-md-none" %>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href='<%= user_url(current_user) %>'>Profile</a>
+                <a class="dropdown-item" href="<%= edit_user_registration_path @user %>">Settings</a>
+                <div class="dropdown-divider"></div>
+                <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
+              </div>
             </div>
-          </div>
-        </li>
-        <li class="nav-item">
-          <button class="btn btn-light" data-toggle="modal" data-target="#purrModal"><i class="fas fa-plus"></i> Purr</button>
-        </li>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-light" data-toggle="modal" data-target="#purrModal"><i class="fas fa-plus"></i> Purr</button>
+          </li>
         <% else %>
           <li class="nav-item d-none d-md-inline-block">
             <%= link_to "Sign up", new_user_registration_path, class: "btn btn-light" %>

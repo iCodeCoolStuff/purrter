@@ -10,17 +10,5 @@
       <%= f.submit "Purr", class: "form-group btn btn-primary d-block ml-auto my-1" %>
     <% end %>
   </div>
-  <% @purrs[0, 3].each do |purr| %>
-    <%= render 'shared/purr.html.erb', purr: purr, bottom: purr.equal?(@purrs[0, 3].last) ? true : false, top: false %>
-  <% end %>
-  <section class="d-block d-md-none my-3 my-md-0">
-    <%= render 'shared/who_to_follow.html.erb' %>
-  </section>
-  <% other_purrs = @purrs[3, @purrs.count] %>
-  <% if other_purrs %>
-    <% @purrs[3, @purrs.count].each do |purr| %>
-      <%= render 'shared/purr.html.erb', purr: purr, top: purr.equal?(other_purrs.first) ? true : false, 
-                                                     bottom: purr.equal?(other_purrs.last) ? true : false %>
-    <% end %>
-  <% end %>
+  <%= render "shared/purrs.html.erb" %>
 </div>
