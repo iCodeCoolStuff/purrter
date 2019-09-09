@@ -7,9 +7,8 @@ class User < ApplicationRecord
 
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
-
-  has_many :likes, class_name: "Like", foreign_key: "liker_id", dependent: :destroy
-  has_many :liked_posts, through: :purrs, source: :likers
+  
+  has_many :likes
 
   validates :name, length: {maximum: 50}, presence: true
   validates :username, length: {maximum: 15}, presence: true, uniqueness: true,
@@ -43,10 +42,14 @@ class User < ApplicationRecord
   end
 
   def like(post)
-    likes.create!(liked_id: post.id)
+    self.likes.create!(user_id: self.id, purr_id: post.id)
   end
 
   def unlike(post)
-    likes.find_by(liked_id: post.id).destroy
+    self.likes.find_by(purr_id: post.id).destroy
+  end
+
+  def likes?(post)
+    self.likes.find_by(purr_id: post.id) ? true : false
   end
 end

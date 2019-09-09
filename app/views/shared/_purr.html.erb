@@ -15,6 +15,16 @@
       <div>
         <i class="fas fa-heart" data-toggle="tooltip" data-placement="top" title="Coming Soon!"></i></p>
       </div>
+      <% if current_user.likes?(purr) %>
+        <%= form_for(Like.find_by(purr_id: purr.id), html: {method: :delete}) do |f| %>
+          <%= f.submit "CLICK HERE TO UNLIKE THIS POST" %>
+        <% end %>
+      <% else %>
+        <%= form_for(purr.likes.build) do |f| %>
+          <%= hidden_field_tag :purr_id, purr.id %>
+          <%= f.submit "CLICK HERE TO LIKE THIS POST" %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

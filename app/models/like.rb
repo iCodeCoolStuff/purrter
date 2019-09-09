@@ -1,6 +1,6 @@
 class Like < ApplicationRecord
-  belongs_to :liker, class_name: "User"
-  belongs_to :liked, class_name: "Purr"
-  validates :liker_id, presence: true
-  validates :liked_id, presence: true
+  belongs_to :user
+  belongs_to :purr
+  validates :user_id, presence: true
+  validates :purr_id, presence: true
 end
