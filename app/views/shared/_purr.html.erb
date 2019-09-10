@@ -5,29 +5,15 @@
   <div class="purr-content-container">
     <p class="purr-title"><a href="<%= user_url(purr.user) %>"><strong><%= purr.user.name %></strong> <small class="text-muted"><%= "@#{purr.user.username}" %></small></a></p>
     <p class="purr-content"><%= purr.content %></p>
-    <div class="action-bar">
+    <div class="action-bar mb-1">
       <div>
         <i class="fas fa-reply" data-toggle="tooltip" data-placement="top" title="Coming Soon!"></i>
       </div>
       <div>
         <i class="fas fa-retweet" data-toggle="tooltip" data-placement="top" title="Coming Soon!"></i>
       </div>
-      <div class="pb-1">
-        <% if current_user.likes?(purr) %>
-          <%= form_for(Like.find_by(purr_id: purr.id), html: {method: :delete}) do |f| %>
-            <%= button_tag(class: "liked") do %>
-              <i class="fas fa-heart"></i> <%= purr.likes.count if purr.likes.count > 0 %>
-            <% end %>
-            <!--<%= f.submit "CLICK HERE TO UNLIKE THIS POST" %>-->
-          <% end %>
-        <% else %>
-          <%= form_for(purr.likes.build) do |f| %>
-            <%= hidden_field_tag :purr_id, purr.id %>
-            <%= button_tag do %>
-              <i class="fas fa-heart"></i> <%= purr.likes.count if purr.likes.count > 0 %>
-            <% end %>
-          <% end %>
-        <% end %>
+      <div>
+        <%= render 'shared/like_button.html.erb', purr: purr %>
       </div>
     </div>
   </div>

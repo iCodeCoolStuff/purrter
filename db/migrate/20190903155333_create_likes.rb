@@ -8,5 +8,6 @@ class CreateLikes < ActiveRecord::Migration[5.2]
 
     add_index :likes, :purr_id
     add_index :likes, :user_id
+    add_index :likes, [:purr_id, :user_id], unique: true
   end
 end

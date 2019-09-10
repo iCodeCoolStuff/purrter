@@ -1,0 +1,14 @@
+<% if current_user.likes?(purr) %>
+  <%= form_for(Like.find_by(purr_id: purr.id), html: {method: :delete}, remote: true) do |f| %>
+    <%= f.button(class: "liked") do %>
+      <i class="fas fa-heart"></i> <%= purr.likes.count %>
+    <% end %>
+  <% end %>
+<% else %>
+  <%= form_for(purr.likes.build, remote: true) do |f| %>
+    <%= hidden_field_tag :purr_id, purr.id %>
+    <%= f.button do %>
+      <i class="fas fa-heart"></i> <span><%= purr.likes.count if purr.likes.count > 0 %></span>
+    <% end %>
+  <% end %>
+<% end %>
