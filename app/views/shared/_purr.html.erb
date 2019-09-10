@@ -12,19 +12,23 @@
       <div>
         <i class="fas fa-retweet" data-toggle="tooltip" data-placement="top" title="Coming Soon!"></i>
       </div>
-      <div>
-        <i class="fas fa-heart" data-toggle="tooltip" data-placement="top" title="Coming Soon!"></i></p>
+      <div class="pb-1">
+        <% if current_user.likes?(purr) %>
+          <%= form_for(Like.find_by(purr_id: purr.id), html: {method: :delete}) do |f| %>
+            <%= button_tag(class: "liked") do %>
+              <i class="fas fa-heart"></i> <%= purr.likes.count if purr.likes.count > 0 %>
+            <% end %>
+            <!--<%= f.submit "CLICK HERE TO UNLIKE THIS POST" %>-->
+          <% end %>
+        <% else %>
+          <%= form_for(purr.likes.build) do |f| %>
+            <%= hidden_field_tag :purr_id, purr.id %>
+            <%= button_tag do %>
+              <i class="fas fa-heart"></i> <%= purr.likes.count if purr.likes.count > 0 %>
+            <% end %>
+          <% end %>
+        <% end %>
       </div>
-      <% if current_user.likes?(purr) %>
-        <%= form_for(Like.find_by(purr_id: purr.id), html: {method: :delete}) do |f| %>
-          <%= f.submit "CLICK HERE TO UNLIKE THIS POST" %>
-        <% end %>
-      <% else %>
-        <%= form_for(purr.likes.build) do |f| %>
-          <%= hidden_field_tag :purr_id, purr.id %>
-          <%= f.submit "CLICK HERE TO LIKE THIS POST" %>
-        <% end %>
-      <% end %>
     </div>
   </div>
 </div>
