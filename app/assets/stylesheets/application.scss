@@ -322,12 +322,22 @@ body {
   }
 
   .action-bar {
-    &> :not(:nth-last-child(1)) {
+    & > :not(:nth-last-child(1)) {
       padding-right: 1rem;
     }
 
     div {
       display: inline-block;
+    }
+
+    button {
+      background-color: transparent;
+      border: none;
+      box-shadow: none;
+    }
+
+    .liked {
+      color: #e0245e;
     }
   }
 }

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :purrs
   resources :relationships, only: [:create, :destroy]
+  resources :likes, only: [:create, :destroy]
   get '/home', to: 'pages#home'
   get '/explore', to: 'pages#explore'
   root "pages#index"

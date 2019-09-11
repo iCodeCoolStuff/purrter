@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
+  
+  has_many :likes
 
   validates :name, length: {maximum: 50}, presence: true
   validates :username, length: {maximum: 15}, presence: true, uniqueness: true,
@@ -37,5 +39,17 @@ class User < ApplicationRecord
     end
 
     records.order(Arel.sql('random()')).limit(2) 
+  end
+
+  def like(post)
+    self.likes.create!(user_id: self.id, purr_id: post.id)
+  end
+
+  def unlike(post)
+    self.likes.find_by(purr_id: post.id).destroy
+  end
+
+  def likes?(post)
+    self.likes.find_by(purr_id: post.id) ? true : false
   end
 end
