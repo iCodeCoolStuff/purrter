@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :follower
   
   has_many :likes
+  has_many :liked_purrs, through: :likes, source: :purr
 
   validates :name, length: {maximum: 50}, presence: true
   validates :username, length: {maximum: 15}, presence: true, uniqueness: true,

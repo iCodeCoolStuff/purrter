@@ -12,6 +12,7 @@ $hero-darkness: 0.3;
 
 body {
   margin-top: $nav-height; //If changing line height please change this value too
+  margin-bottom: 3rem;
   @extend .gray-bg;
 }
 

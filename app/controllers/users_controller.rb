@@ -4,4 +4,13 @@ class UsersController < ApplicationController
     @purrs = @user.purrs.order("id DESC")
     set_to_follow_users
   end
+
+  def following
+  end
+
+  def followers
+  end
+
+  def liked
+  end
 end
