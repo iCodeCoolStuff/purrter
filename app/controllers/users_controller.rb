@@ -11,6 +11,8 @@ class UsersController < ApplicationController
   def followers
   end
 
-  def liked
+  def likes
+    @user = User.find(params[:id])
+    @purrs = @user.liked_purrs
   end
 end
