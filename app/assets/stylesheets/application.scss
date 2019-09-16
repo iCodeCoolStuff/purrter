@@ -239,27 +239,29 @@ body {
   }
 }
 
-.purr-content-container {
-  margin-left: 1rem;
+.purr-container {
+  & > div {
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    
+    &:first-of-type {
+      border-radius:  $profile-border-radius $profile-border-radius 0 0;
+    }
+  
+    &:last-of-type {
+      border-radius:  0 0 $profile-border-radius $profile-border-radius;
+      border-bottom:  1px solid black;
+    }
+  
+    &:first-of-type:last-of-type {
+      border-radius:  $profile-border-radius;
+    }
+  }
 }
 
-.purr-container > div {
-  border-top: 1px solid black;
-  border-right: 1px solid black;
-  border-left: 1px solid black;
-  
-  &:first-of-type {
-    border-radius:  $profile-border-radius $profile-border-radius 0 0;
-  }
-
-  &:last-of-type {
-    border-radius:  0 0 $profile-border-radius $profile-border-radius;
-    border-bottom:  1px solid black;
-  }
-
-  &:first-of-type:last-of-type {
-    border-radius:  $profile-border-radius;
-  }
+.purr-content-container {
+  margin-left: 1rem;
 }
 
 .purr {
@@ -341,6 +343,48 @@ body {
 
     .liked {
       color: #e0245e;
+    }
+  }
+}
+
+.user-container {
+  @extend .purr-container;
+}
+
+.user {
+  background-color: white;
+  box-sizing: border-box;
+  padding: 0.5rem 1rem;
+
+  .user-title {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+  
+    a {  
+      color: black;
+
+      &:hover {
+        text-decoration: none;
+
+        strong {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .user-content-container {
+    margin-left: 1rem;
+  }
+
+  .user-img-container {
+    img {
+      border: 1px solid black;
+      border-radius: $profile-border-radius;
+      width: 3.25rem;
+      height: 3.25rem;
     }
   }
 }

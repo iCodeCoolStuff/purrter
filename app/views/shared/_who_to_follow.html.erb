@@ -1,7 +1,6 @@
 <div class="who-to-follow container">
   <h5>Who to Follow</h5>
-  <% to_follow = User.random_2_not(current_user) %>
-  <% for u in to_follow do %>
+  <% for u in @to_follow_users do %>
     <div class="follow-profile">
       <div class="row">
         <div class="col-3">
