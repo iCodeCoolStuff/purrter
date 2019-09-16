@@ -9,11 +9,11 @@ class UsersController < ApplicationController
   end
 
   def following
-    @following = @user.following
+    @following = @user.following.where.not(id: current_user.id)
   end
 
   def followers
-    @following = @user.followers
+    @followers = @user.followers.where.not(id: current_user.id)
   end
 
   def likes

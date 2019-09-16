@@ -6,11 +6,11 @@
     <div class="user-title d-flex flex-column">
       <a href='<%= user_url(user) %>'>
         <p class="mb-0"><strong><%= user.name %></strong></p>
-        <p class="text-muted"><%= "@#{user.username}" %></p>
+        <small class="text-muted d-block"><%= "@#{user.username}" %></small>
       </a>
     </div>
     <div class="d-flex flex-column justify-content-center">
-      <%= render "shared/follow_button.html.erb" %>
+      <%= render "shared/follow_button.html.erb", user: user %>
     </div>
   </div>
 </div>
