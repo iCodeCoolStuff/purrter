@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations'}
   resources :users do
     member do
-      get :following, :followers
+      get :following
+      get :followers
+      get :likes
     end
   end
   resources :users, only: [:show]

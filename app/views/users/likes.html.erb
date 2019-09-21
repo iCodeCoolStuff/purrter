@@ -22,10 +22,10 @@
       <div class="d-none d-md-block col-md-4 col-lg-3"></div>
       <div class="col-12 col-md-8 col-lg-6">
         <ul class="stats-bar d-flex d-md-block justify-content-between">
-          <li><a href="<%= user_url(@user) %>" class="active"><span class="text-muted">Purrs</span><span><%= @user.purrs.count %></span></a>
+          <li><a href="<%= user_url(@user) %>"><span class="text-muted">Purrs</span><span><%= @user.purrs.count %></span></a>
           <li><a href="<%= following_user_path(@user) %>"><span class="text-muted">Following</span><span><%= @user.following.count %></span></span></a>
           <li><a href="<%= followers_user_path(@user) %>"><span class="text-muted">Followers</span><span><%= @user.followers.count %></span></a>
-          <li><a href="<%= likes_user_path(@user) %>"><span class="text-muted">Likes</span><span><%= @user.liked_purrs.count %></span></a>
+          <li><a href="<%= likes_user_path(@user) %>" class="active"><span class="text-muted">Likes</span><span><%= @user.liked_purrs.count %></span></a>
         </ul>
       </div>
       <div class="d-none d-lg-flex col-3 flex-column justify-content-center">

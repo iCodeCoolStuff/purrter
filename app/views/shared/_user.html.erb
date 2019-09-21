@@ -1,0 +1,16 @@
+<div class="user d-flex">
+  <div class="user-img-container">
+    <%= link_to(user_avatar(user), user_url(user)) %>
+  </div>
+  <div class="user-content-container d-flex justify-content-between w-100">
+    <div class="user-title d-flex flex-column">
+      <a href='<%= user_url(user) %>'>
+        <p class="mb-0"><strong><%= user.name %></strong></p>
+        <small class="text-muted d-block"><%= "@#{user.username}" %></small>
+      </a>
+    </div>
+    <div class="d-flex flex-column justify-content-center">
+      <%= render "shared/follow_button.html.erb", user: user %>
+    </div>
+  </div>
+</div>
