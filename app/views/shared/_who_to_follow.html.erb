@@ -1,22 +1,20 @@
 <div class="who-to-follow container">
   <h5>Who to Follow</h5>
   <% for u in @to_follow_users do %>
-    <div class="follow-profile">
-      <div class="row">
-        <div class="col-3">
-          <%= link_to(user_avatar(current_user, class: "follow-profile-img"), user_url(u)) %>
-        </div>
-        <div class="col-9">
-          <p class="follow-profile-title">
-            <a href='<%= user_url(u) %>'>
-              <strong><%= u.name %></strong>
-              <small class="text-muted">
-                <%= "@#{u.username}" %>
-              </small>
-            </a>
-          </p>
-          <%= render 'shared/small_follow_button.html.erb', {linked_user: u} %>
-        </div>
+    <div class="follow-profile d-flex">
+      <div>
+        <%= link_to(user_avatar(current_user, class: "follow-profile-img"), user_url(u)) %>
+      </div>
+      <div class="ml-3">
+        <p class="follow-profile-title">
+          <a href='<%= user_url(u) %>'>
+            <strong><%= u.name %></strong>
+            <small class="text-muted">
+              <%= "@#{u.username}" %>
+            </small>
+          </a>
+        </p>
+        <%= render 'shared/small_follow_button.html.erb', {linked_user: u} %>
       </div>
     </div>
   <% end %>
