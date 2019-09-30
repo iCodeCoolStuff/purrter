@@ -12,7 +12,6 @@ $hero-darkness: 0.3;
 
 body {
   margin-top: $nav-height; //If changing line height please change this value too
-  margin-bottom: 1rem;
   @extend .gray-bg;
 }
 
@@ -96,6 +95,7 @@ body {
 
 .main {
   padding-top: 1rem;
+  margin-bottom: 1rem;
   @extend .gray-bg;
 }
 
@@ -134,6 +134,8 @@ body {
 
   .follow-profile-img {
     @extend %profile;
+    width: 3.5rem;
+    height: 3.5rem;
     margin-top: 0.25rem;
   }
 
@@ -144,6 +146,15 @@ body {
 
     small {
       display: block;
+    }
+  }
+}
+
+@media (min-width: map-get($grid-breakpoints, 'lg')) {
+  .who-to-follow {
+    .follow-profile-img {
+      width: 2.5rem;
+      height: 2.5rem;
     }
   }
 }
