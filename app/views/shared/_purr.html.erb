@@ -1,4 +1,19 @@
-<div class="purr d-flex<%= ' bottom-purr' if bottom %><%= ' top-purr' if top %>">
+<div class="purr d-flex position-relative<%= ' bottom-purr' if bottom %><%= ' top-purr' if top %>">
+
+  <% if current_user.id == purr.user.id %>
+    <div class="dropdown position-absolute purr-dots">
+      <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-ellipsis-h"></i>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <%= link_to 'Edit', edit_purr_path(purr), class: "dropdown-item" %>
+        <%= form_for(purr, html: { method: :delete }) do |f| %>
+          <%= f.submit "Delete", class: "dropdown-item" %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
   <div class="purr-img-container">
     <%= link_to(user_avatar(purr.user), user_url(purr.user)) %>
   </div>

@@ -9,6 +9,44 @@ class PurrsController < ApplicationController
       redirect_to home_url, alert: "Invalid form."
     end
   end
+  
+  def edit
+    @purr = Purr.find(params[:id])
+    if not @purr.user.id.equal? current_user.id
+      flash[:notice] = "Not allowed to edit that purr"
+      redirect_back fallback_location: "/home"
+    end
+  end
+
+  def update
+    @purr = Purr.find(params[:id])
+
+    if @purr.user.id.equal? current_user.id
+      if @purr.update_attributes(purr_params)
+        flash[:notice] = "Purr successfully updated!"
+        redirect_back fallback_location: "/home"
+      else
+        flash[:notice] = "Unable to update purr."
+        redirect_back fallback_location: "/home"
+      end
+    else
+      flash[:notice] = "Not allowed to edit that purr."
+      redirect_back fallback_location: "/home"
+    end
+  end
+
+  def destroy
+    purr = Purr.find(params[:id])
+    
+    if not current_user.id == purr.user.id
+      flash[:notice] = "Not allowed to delete that purr."
+      redirect_back fallback_location: "/home"
+    else
+      purr.destroy
+      flash[:notice] = "Purr successfully deleted!"
+      redirect_back fallback_location: "/home"
+    end
+  end
 
   private
 

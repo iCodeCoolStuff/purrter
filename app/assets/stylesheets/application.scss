@@ -142,7 +142,9 @@ body {
   .follow-profile-title {
     font-size: 0.875rem;
     margin-bottom: 0.25rem;
+    overflow-wrap: break-word;
     word-wrap: break-word;
+    word-break: break-word;
 
     small {
       display: block;
@@ -281,6 +283,20 @@ body {
   padding-top: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
+
+  .purr-dots {
+    top: 0;
+    right: 0;
+
+    .btn {
+      border: none;
+
+      &:focus {
+        box-shadow: none;
+        border: none;
+      }
+    }
+  }
 
   .row {
     margin-right: 0;
@@ -484,7 +500,7 @@ body {
       width: calc(1.5em + 0.75rem + 2px);
     }
   
-    input[type="text"] {
+    input[type="text"], textarea {
       margin-left: 1rem;
       min-width: 0;
     }
