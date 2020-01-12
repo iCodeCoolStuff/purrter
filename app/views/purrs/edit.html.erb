@@ -1,0 +1,21 @@
+<section class="container-fluid main">
+  <div class="container no-padding-x-sm">
+    <div class="row">
+      <section class="col-12 col-md-8 col-lg">
+        <div class="purr-container">
+          <div class="post-form">
+            <%= form_for @purr do |f| %>
+              <div class="form-content">
+                <%= link_to(user_avatar(current_user), user_url(current_user)) %>
+                <%= f.hidden_field :user_id, value: current_user.id %>
+                <%= f.text_area :content, autofocus: true, autocomplete: "content", class: "form-control",
+                                  placeholder: "What's Cattening?", required: "", maxlength: "140" %>
+              </div>
+              <%= f.submit "Edit", class: "form-group btn btn-primary d-block ml-auto my-1" %>
+            <% end %>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
